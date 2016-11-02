@@ -1,0 +1,26 @@
+<script>
+  $(document).ready( function() {
+    var dir = "/static/sample-work/";
+    var fileextension = ".jpg";
+    $.ajax({
+      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      url: dir,
+      success: function (data) {
+        //List all .png file names in the page
+        $(data).find("a:contains(" + fileextension + ")").each(function () {
+            $(".col-sm-12").append("<img src='" + dir + filename + "'>");
+        });
+      }
+    });
+  });
+</script>
+<div class="the-work-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+      </div>
+    </div>
+  </div>
+</div>
+
